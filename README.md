@@ -26,6 +26,13 @@ We will use **Eventbridge** to filter AWS Config notification based on `Configur
 
 Look at `aws_cloudwatch_event_rule.config_messages` where we have filtered message that we want to send to SNS.
 
+We can further filter out config messages based on `configurationItemStatus` There are in total 5 configuration item status in config messages:
+```
+OK | ResourceDiscovered | ResourceNotRecorded | ResourceDeleted | ResourceDeletedNotRecorded
+```
+
+Refer `aws_cloudwatch_event_rule.config_messages` resource in `event.tf` where we have `configurationItemStatus` property
+
 To have a custom message in email we can add `input_transformer` in `aws_cloudwatch_event_target.sns` present in `event.tf`
 
 
