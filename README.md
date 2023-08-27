@@ -35,6 +35,13 @@ Refer `aws_cloudwatch_event_rule.config_messages` resource in `event.tf` where w
 
 To have a custom message in email we can add `input_transformer` in `aws_cloudwatch_event_target.sns` present in `event.tf`
 
+**Important:**
+In this particluar case I have created 2 eventbridge rules:
+
+1. First rule will tracks resources `[ "AWS::EC2::RouteTable", "AWS::IAM::User", "AWS::IAM::Group", "AWS::IAM::Policy", "AWS::IAM::Role" ]` with configuration item status as `[ "ResourceDiscovered", "ResourceDeleted", "OK" ]`
+
+2. Second rule will track resource `[ AWS::EC2::SecurityGroup ]` with configuration item status as `[ "ResourceDiscovered", "ResourceDeleted" ]` this means, we will only receive email notification if there is creation and deletion of security group, not for any kind of updates in security groups.
+
 
 ## Installation
 

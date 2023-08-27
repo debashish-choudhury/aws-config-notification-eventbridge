@@ -8,5 +8,5 @@
 # group_eventbridge_configuration_item_status_filter = ["ResourceDiscovered", "ResourceDeleted", "OK"]
 # security_eventbridge_rule_name = "security-msg-filter"
 # security_resource_type_filter = ["AWS::EC2::SecurityGroup"]
-# security_eventbridge_configuration_item_status_filter = ["AWS::EC2::SecurityGroup"]
+# security_eventbridge_configuration_item_status_filter = ["ResourceDiscovered", "ResourceDeleted"]
 # email_list = ["test@test.com"]
